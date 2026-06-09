@@ -1,0 +1,122 @@
+/* styles.css */
+
+/* Background Image Setup */
+body { 
+    background: url('images/cinema-bg.jpg') no-repeat center center fixed; /* Replace with your image path */
+    background-size: cover;
+    color: #e0e0e0; 
+    font-family: 'Open Sans', sans-serif; 
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Overlay to Darken Background Image for Better Readability */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust transparency */
+    z-index: -1;
+}
+
+/* Navbar Styling */
+.navbar { 
+    background-color: rgba(0, 0, 0, 0.8); 
+    padding: 15px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+.navbar-brand { 
+    color: #00ffd5; 
+    font-size: 1.8rem; 
+    font-weight: 700; 
+}
+
+.navbar-nav .nav-link { 
+    color: #e0e0e0; 
+    transition: color 0.3s; 
+}
+
+.navbar-nav .nav-link:hover { 
+    color: #00ffd5; 
+}
+
+/* Card Styling */
+.card {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #f0f0f0;
+    border: 1px solid #00ffd5;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.card:hover { 
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px rgba(0, 255, 213, 0.5); 
+}
+
+.card img {
+    height: 400px;
+    object-fit: cover;
+    border-bottom: 1px solid #333;
+}
+
+/* Buttons Styling */
+.btn-danger { 
+    background-color: #ff006e; 
+    border: none; 
+    transition: background-color 0.3s, transform 0.2s; 
+}
+
+.btn-danger:hover { 
+    background-color: #ff4d6d; 
+    transform: scale(1.03); 
+}
+
+.btn-primary { 
+    background-color: #4895ef; 
+    border: none; 
+    transition: background-color 0.3s, transform 0.2s; 
+}
+
+.btn-primary:hover { 
+    background-color: #3a86ff; 
+    transform: scale(1.03); 
+}
+
+/* Modal Styling */
+.modal-content { 
+    background-color: rgba(0, 0, 0, 0.9); 
+    color: white; 
+    border-radius: 12px; 
+    border: 1px solid #00ffd5; 
+}
+
+h2 { 
+    color: #00ffd5; 
+    margin-bottom: 30px; 
+    font-size: 2.5rem; 
+    text-shadow: 0 0 8px rgba(0, 255, 213, 0.7); 
+}
+
+.card-title { 
+    font-size: 1.2rem; 
+    margin-bottom: 10px; 
+    color: #e0e0e0;
+}
+
+.card-text { 
+    font-size: 0.9rem; 
+    color: #a6a6a6; 
+}
+
+a, a:hover {
+    text-decoration: none;
+    color: #00ffd5;
+} 
