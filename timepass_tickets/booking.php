@@ -23,14 +23,23 @@ if (!$movie) {
 }
 ?>
 
-<div class="container py-5">
+<div class="container py-5 mt-5">
     <h2 class="text-center text-primary fw-bold mb-4">🎟 Book Tickets for <?= htmlspecialchars($movie['title']) ?></h2>
 
-    <div class="card shadow-lg mb-4"> <!-- Styled card -->
-        <img src="<?= htmlspecialchars($movie['poster_url']); ?>" class="card-img-top" alt="<?= htmlspecialchars($movie['title']); ?>">
-        <div class="card-body">
-            <h4 class="card-title"><?= htmlspecialchars($movie['title']); ?></h4>
-            <p class="card-text"><?= htmlspecialchars($movie['description'] ?? 'No description available.'); ?></p>
+    <div class="card shadow-lg mb-4">
+        <div class="row g-0">
+            <div class="col-md-4 col-lg-3 text-center p-3">
+                <img src="<?= htmlspecialchars($movie['poster_url']); ?>" class="img-fluid rounded shadow" alt="<?= htmlspecialchars($movie['title']); ?>" style="max-height: 380px; object-fit: contain; width: auto; border: none;">
+            </div>
+            <div class="col-md-8 col-lg-9 d-flex align-items-center">
+                <div class="card-body">
+                    <h3 class="card-title text-warning fw-bold mb-3"><?= htmlspecialchars($movie['title']); ?></h3>
+                    <p class="mb-2"><strong>Genre:</strong> <span class="badge bg-secondary"><?= htmlspecialchars($movie['genre'] ?? 'N/A'); ?></span></p>
+                    <p class="mb-2"><strong>Duration:</strong> <span class="text-info"><?= htmlspecialchars($movie['duration'] ?? 'N/A'); ?> mins</span></p>
+                    <p class="mb-2"><strong>Language:</strong> <span class="text-white"><?= htmlspecialchars($movie['language'] ?? 'N/A'); ?></span></p>
+                    <p class="card-text mt-3 text-secondary"><?= htmlspecialchars($movie['description'] ?? 'No description available.'); ?></p>
+                </div>
+            </div>
         </div>
     </div>
 

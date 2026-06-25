@@ -2,7 +2,7 @@
 include_once "header.php"; // Include the navbar
 ?>
 
-<div class="container py-5">
+<div class="container py-5 mt-5">
     <div class="p-5 rounded card"> <!-- Applying your card styling -->
         <h2 class="text-center mb-4">About Us</h2>
         <p class="lead text-center">Welcome to <strong>Timepass Tickets</strong> – your one-stop destination for booking movie tickets online.</p>

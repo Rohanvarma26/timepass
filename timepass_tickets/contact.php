@@ -2,9 +2,16 @@
 include_once "header.php"; // Include the navbar
 ?>
 
-<div class="container py-5">
+<div class="container py-5 mt-5">
     <div class="p-5 rounded" style="background-color: rgba(0, 0, 0, 0.85); border: 1px solid #00ffd5; box-shadow: 0 0 15px rgba(0, 255, 213, 0.5);">
         <h2 class="text-center mb-4" style="color: #00ffd5; text-shadow: 0 0 8px rgba(0, 255, 213, 0.7);">Contact Us</h2>
+        
+        <?php if (isset($_GET['success']) && $_GET['success'] == 1): ?>
+            <div class="alert alert-success text-center mb-4" role="alert" style="background-color: rgba(25, 135, 84, 0.2); border-color: #198754; color: #a3cfbb;">
+                ✨ Thank you for contacting us! Your message has been sent successfully. We'll get back to you shortly.
+            </div>
+        <?php endif; ?>
+
         <p class="lead text-center" style="color: #e0e0e0;">Have questions or need help? Feel free to reach out to us.</p>
 
         <form action="send_message.php" method="POST">
@@ -35,7 +42,7 @@ include_once "header.php"; // Include the navbar
     </div>
 </div>
 
-<script src="js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <?php
 include_once "footer.php"; // Include the footer

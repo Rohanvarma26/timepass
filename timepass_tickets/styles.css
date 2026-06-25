@@ -109,11 +109,20 @@ h2 {
     font-size: 1.2rem; 
     margin-bottom: 10px; 
     color: #e0e0e0;
+    height: 28px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .card-text { 
     font-size: 0.9rem; 
     color: #a6a6a6; 
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    height: 42px;
 }
 
 a, a:hover {

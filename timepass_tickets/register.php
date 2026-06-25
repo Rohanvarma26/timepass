@@ -6,10 +6,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT); // Hash the password
+    $phone = $_POST['phone'];
 
     // Prevent SQL injection
     $name = mysqli_real_escape_string($conn, $name);
     $email = mysqli_real_escape_string($conn, $email);
+    $phone = mysqli_real_escape_string($conn, $phone);
     
     // Check if email already exists
     $check_email = "SELECT * FROM user WHERE email='$email'";
@@ -20,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Insert user into database
-    $sql = "INSERT INTO user (name, email, password) VALUES ('$name', '$email', '$password')";
+    $sql = "INSERT INTO user (name, email, password, phone) VALUES ('$name', '$email', '$password', '$phone')";
     if (mysqli_query($conn, $sql)) {
         echo "<script>alert('Registration successful! Please login.'); window.location.replace('login.php');</script>";
     } else {

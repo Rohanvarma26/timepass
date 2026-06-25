@@ -29,8 +29,7 @@ if (!$movie) {
     die("Movie not found!");
 }
 
-$ticket_price = $movie['price'];
-$total_amount = $tickets * $ticket_price;
+$total_amount = isset($_POST['total_amount']) ? floatval($_POST['total_amount']) : ($tickets * $movie['price']);
 $stmt->close();
 $conn->close();
 ?>
@@ -102,7 +101,6 @@ $conn->close();
                 <option value="PhonePe">PhonePe</option>
                 <option value="Paytm">Paytm</option>
                 <option value="UPI">UPI / QR Code</option>
-                <option value="Cash">Cash Payment</option>
             </select>
             <button type="submit" class="btn btn-custom mt-3 w-100">Proceed to Pay</button>
             <a href="index.php" class="btn btn-custom mt-3 w-100">Home</a>

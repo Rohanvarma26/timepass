@@ -1,3 +1,28 @@
+<?php
+session_start();
+
+// If already logged in, redirect directly to admin panel
+if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true) {
+    header("Location: admin/index.php");
+    exit();
+}
+
+$error_message = "";
+
+if (isset($_POST['btnsubmit'])) {
+    $email = trim($_POST['txtemail']);
+    $password = trim($_POST['txtpwd']);
+
+    // Checking credentials
+    if ($email === 'admin@gmail.com' && $password === 'admin123') {
+        $_SESSION['admin_logged_in'] = true;
+        header("Location: admin/index.php");
+        exit();
+    } else {
+        $error_message = "Invalid Admin Email or Password!";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -98,6 +123,9 @@
 <body>
     <div class="login-wrapper">
         <h1>Admin Login</h1>
+        <?php if (!empty($error_message)): ?>
+            <div style="color: #ff4d4d; margin-bottom: 15px; font-weight: bold;"><?= htmlspecialchars($error_message) ?></div>
+        <?php endif; ?>
         <form action="" method="post" onsubmit="return validation()">
             <div class="form-group">
                 <label>Email Address</label>
